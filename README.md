@@ -6,7 +6,7 @@ Tela de Entrada:
 
 
 Tela Principal:
-![cortado](https://user-images.githubusercontent.com/76443540/122645594-73987880-d0f1-11eb-872f-5fd9784b906e.png)
+![tela_principal_tamcerto](https://user-images.githubusercontent.com/76443540/122645641-ae9aac00-d0f1-11eb-89ef-15c2927e7068.png)
 
 
 
