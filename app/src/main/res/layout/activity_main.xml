@@ -1,18 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_width="match_parent"
+    android:fillViewport="true">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gerador de QR Code e Leitor"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.563"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.022" />
+
+        <EditText
+            android:id="@+id/editQrCode"
+            android:layout_width="341dp"
+            android:layout_height="48dp"
+            android:layout_margin="15dp"
+            android:layout_marginTop="80dp"
+            android:ems="10"
+            android:hint="Digite o conteúdo do QR Code..."
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.457"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/btnGerarQqrCode"
+            android:layout_width="161dp"
+            android:layout_height="54dp"
+            android:background="@color/black"
+            android:text="Gerar Qr Code"
+            app:backgroundTint="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.128"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editQrCode"
+            app:layout_constraintVertical_bias="0.026" />
+
+        <ImageView
+            android:id="@+id/imgQrCode"
+            android:layout_width="275dp"
+            android:layout_height="231dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnGerarQqrCode"
+            app:layout_constraintVertical_bias="0.0"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <Button
+            android:id="@+id/btnlercode"
+            android:layout_width="137dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+
+            android:background="#289F07"
+            android:text="LER QR CODE"
+            app:backgroundTint="#289F07"
+            app:layout_constraintBottom_toTopOf="@+id/imgQrCode"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.846"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.763" />
+
+        <Button
+            android:id="@+id/btnUrls"
+            android:layout_width="327dp"
+            android:layout_height="47dp"
+            android:text="ABRIR URL LIDA"
+            app:backgroundTint="#4CAF50"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.464"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.884" />
+
+        <TextView
+            android:id="@+id/txtConteudoUrl"
+            android:layout_width="322dp"
+            android:layout_height="53dp"
+            android:text=""
+            app:layout_constraintBottom_toTopOf="@+id/btnUrls"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.438"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgQrCode"
+            app:layout_constraintVertical_bias="0.927" />
+
+        <Button
+            android:id="@+id/btnCompartilharQrCode"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:text="COMPARTILHAR QR CODE CRIADO"
+            app:layout_constraintBottom_toTopOf="@+id/txtConteudoUrl"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgQrCode"
+            app:layout_constraintVertical_bias="0.137" />
+
+        <TextView
+            android:id="@+id/txttitulolido"
+            android:layout_width="281dp"
+            android:layout_height="24dp"
+            android:text=""
+            app:layout_constraintBottom_toTopOf="@+id/txtConteudoUrl"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnCompartilharQrCode"
+            app:layout_constraintVertical_bias="0.421" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
